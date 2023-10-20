@@ -1,0 +1,22 @@
+{% extends "AppChuleleche/base.html" %}
+{% load static %}
+
+{% block title %} Ventas {% endblock title %}
+
+{% block main %}
+<table>
+    <tr>
+        <th> Numero </th>
+        <th> Monto </th>
+        <th> Fecha </th>
+    </tr>
+    {% for venta in ventas %}
+    <tr>
+        <td> {{ venta.numero }} </td>
+        <td> {{ venta.valor }} </td>
+        <td> {{ venta.fecha }} </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock main %}

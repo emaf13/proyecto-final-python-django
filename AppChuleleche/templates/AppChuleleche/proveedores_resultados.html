@@ -1,0 +1,28 @@
+{% extends "AppChuleleche/base.html" %}
+{% load static %}
+
+{% block title %} Proveedores {% endblock title %}
+
+{% block main %}
+<table>
+    <tr>
+        <th> Nombre </th>
+        <th> Teléfono </th>
+        <th> Correo </th>
+        <th> Envios </th>
+    </tr>
+    {% for proveedor in proveedores %}
+    <tr>
+        <td> {{ proveedor.nombre }} </td>
+        <td> {{ proveedor.telefono }} </td>
+        <td> {{ proveedor.correo }} </td>
+        {% if proveedor.hacen_envios %}
+           <td>Sí</td>
+        {% else %}
+           <td>No</td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock main %}

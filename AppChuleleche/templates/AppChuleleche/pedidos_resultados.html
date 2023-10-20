@@ -1,0 +1,22 @@
+{% extends "AppChuleleche/base.html" %}
+{% load static %}
+
+{% block title %} Pedidos {% endblock title %}
+
+{% block main %}
+<table>
+    <tr>
+        <th> Numero </th>
+        <th> Monto </th>
+        <th> Fecha </th>
+    </tr>
+    {% for pedido in pedidos %}
+    <tr>
+        <td> {{ pedido.numero }} </td>
+        <td> {{ pedido.valor }} </td>
+        <td> {{ pedido.fecha }} </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock main %}
