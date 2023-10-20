@@ -23,6 +23,7 @@ class Pedido(models.Model):
     numero = models.IntegerField()
     valor = models.FloatField()
     fecha = models.DateField()
+    proveedor = models.ForeignKey(Proveedor, null=True, blank=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return f"Pedido nro {self.numero}"

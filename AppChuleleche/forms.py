@@ -22,6 +22,7 @@ class PedidoFormulario(forms.Form):
     numero = forms.CharField()
     valor = forms.FloatField()
     fecha = forms.DateField()
+    proveedor = forms.CharField()
 
 class BuscarPedidoFormulario(forms.Form):
     fecha = forms.DateField()
