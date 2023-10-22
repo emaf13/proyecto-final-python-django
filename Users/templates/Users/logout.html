@@ -1,0 +1,33 @@
+{% extends "AppChuleleche/base.html" %}
+{% load static %}
+
+{% block title %} Logout {% endblock title %}
+
+{% block main %}
+    <!-- <h2>{{ mensaje }}</h2>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Inciar sesion</button>
+    </form> -->
+
+    <div class="container text-center">
+        <h1>Has cerrado sesión</h1>
+    </div>
+    <!-- <div class="container">
+        <div class="form-group">
+        <form style=" width: 50vw; margin-left : 15vw;" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <div class="container text-center">
+            <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+        </form>
+        </div>
+        <br>
+        <div class="container text-center">
+        <p>Ya tenés una cuenta? <a href="{% url 'Login' %}">Iniciar Sesión</a></p>
+        </div> -->
+    </div>
+
+{% endblock main %}

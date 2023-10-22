@@ -1,8 +1,6 @@
 from django.urls import path
 from AppChuleleche import views
 
-from django.contrib.auth.views import LogoutView
-
 
 urlpatterns = [
     path('', views.inicio, name="Raiz"),
@@ -18,10 +16,6 @@ urlpatterns = [
     path('pedidos-buscar/', views.buscar_pedidos, name="PedidosBuscar"),
     path('ventas-alta/', views.alta_ventas, name="VentasAlta"),
     path('ventas-buscar/', views.buscar_ventas, name="VentasBuscar"),
-    path('login/', views.login_request, name="Login"),
-    path('registro/', views.register, name='Register'),
-    path('logout/', LogoutView.as_view(template_name='AppChuleleche/index.html'), name='Logout'),
-    path('edit/', views.editProfile, name='Edit'),
 
 ]
 
