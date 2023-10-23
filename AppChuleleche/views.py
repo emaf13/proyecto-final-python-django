@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from AppChuleleche.models import Proveedor, Cliente, Pedido, Venta
 from AppChuleleche.forms import *
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
+
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -9,7 +10,15 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 class ProveedorListView(LoginRequiredMixin, ListView):
     model = Proveedor
+    template_name = "AppChuleleche/proveedores_list.html"
+
+class ProveedorListView2(LoginRequiredMixin, ListView):
+    model = Proveedor
     template_name = "AppChuleleche/proveedores_resultados_cbv.html"
+
+class ProveedorDetalle(LoginRequiredMixin,DetailView):
+    model = Proveedor
+    template_name = 'AppChuleleche/proveedor_detalle.html'
 
 # Create your views here.
 def inicio(request):

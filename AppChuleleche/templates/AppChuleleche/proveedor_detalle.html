@@ -1,0 +1,72 @@
+{% extends "AppChuleleche/base.html" %}
+{% load static %}
+
+{% block title %} Proveedores {% endblock title %}
+
+{% block main %}
+
+<div class="container text-center">
+    <h1>Proveedor</h1>
+</div>
+
+<br>
+
+<div class="container">
+
+    <p><h4>{{proveedor.nombre}}</h4></p>
+    {% if proveedor.logo %}
+        <p><img src="{{proveedor.logo.url}}" alt=""></p>
+    {% endif %}
+    {% if proveedor.telefono is None %}
+        <p>Telefono:</p>
+    {% else %}
+        <p>Telefono: {{proveedor.telefono}}</p>
+    {% endif %}
+
+    {% if proveedor.correo is None %}
+        <p>Email:</p>
+    {% else %}
+        <p>Email: {{proveedor.correo}}</p>
+    {% endif %}   
+
+    {% if proveedor.web is None %}
+        <p>Web:</p>
+    {% else %}
+        <p>Web: {{proveedor.web}}</p>
+    {% endif %}
+
+    {% if proveedor.descripcion is None %}
+        <p>Descripción:</p>
+    {% else %}
+        <p>Descripción: {{proveedor.descripcion}}</p>
+    {% endif %}
+    
+    {% if proveedor.hacen_envios %}
+        <p>Hacen envios: Sí</p>
+    {% else %}
+        <p>Hacen envios: No</p>
+    {% endif %}
+</div>
+
+<!-- <table>
+    <tr>
+        <th> Nombre </th>
+        <th> Teléfono </th>
+        <th> Correo </th>
+        <th> Envios </th>
+    </tr>
+    {% for proveedor in object_list %}
+    <tr>
+        <td> {{ proveedor.nombre }} </td>
+        <td> {{ proveedor.telefono }} </td>
+        <td> {{ proveedor.correo }} </td>
+        {% if proveedor.hacen_envios %}
+           <td>Sí</td>
+        {% else %}
+           <td>No</td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+</table> -->
+
+{% endblock main %}

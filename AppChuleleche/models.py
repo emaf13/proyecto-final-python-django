@@ -8,6 +8,8 @@ class Proveedor(models.Model):
     web = models.URLField(max_length=40, null=True, blank=True)
     descripcion = models.TextField(null=True, blank=True)
     hacen_envios = models.BooleanField(default=False)
+    logo = models.ImageField(null=True, blank=True, upload_to="proveedores", default="proveedores/default_logo2.png")
+
 
     def __str__(self):
         return f"{self.nombre}"

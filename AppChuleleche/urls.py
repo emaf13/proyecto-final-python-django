@@ -20,7 +20,8 @@ urlpatterns = [
 ]
 
 urlpatterns += [
+    path('proveedores/list2', views.ProveedorListView2.as_view(), name="ProveedorList2"),
     path('proveedores/list', views.ProveedorListView.as_view(), name="ProveedorList"),
-    #path('proveedores/list', views.ProveedorListView.as_view(), name="ProveedorList"),
+    path('proveedor/<int:pk>/', views.ProveedorDetalle.as_view(), name='ProveedorDetalle'),
 
 ]
